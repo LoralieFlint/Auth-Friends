@@ -20,7 +20,7 @@ function Login() {
     axios
       .post("http://localhost:5000/api/login", data)
       .then(res => {
-        console.log(res.data);
+          localStorage.setItem("token", res.data.payload)
       })
       .catch(err => {
         setError(err.response.data.message);

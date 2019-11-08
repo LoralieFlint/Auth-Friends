@@ -1,10 +1,18 @@
 import React from 'react';
+import { Link, Route } from "react-router-dom";
+
+import Login from "./login";
 
 function App() {
+
   return (
     <div className="App">
-     <h1>HELLO WORLD!!!</h1>
-    </div>
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to='/login'>Log In</Link>
+      </nav>
+      <Route exact path="/login" component={Login}></Route>
+    </div> 
   );
 }
 

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios";
+import api from "./api";
 
 function Login() {
   const [error, setError] = useState();
@@ -17,10 +17,10 @@ function Login() {
 
   const handleSubmit = event => {
     event.preventDefault();
-    axios
+    api()
       .post("http://localhost:5000/api/login", data)
       .then(res => {
-          localStorage.setItem("token", res.data.payload)
+        localStorage.setItem("token", res.data.payload);
       })
       .catch(err => {
         setError(err.response.data.message);

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, Route } from "react-router-dom";
 
+import Friends from "./Friends";
 import Login from "./login";
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
         <Link to='/login'>Log In</Link>
       </nav>
       <Route exact path="/login" component={Login}></Route>
+    <Friends />
     </div> 
   );
 }
